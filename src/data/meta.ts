@@ -107,3 +107,61 @@ export function getTier(winrate: number): "S" | "A" | "B" | "C" {
   if (winrate >= 0.50) return "B";
   return "C";
 }
+
+export interface Matchup {
+  vsArchetype: string;
+  winrateAgainst: number;
+}
+
+export const matchupsData: { archetype: string; matchups: Matchup[] }[] = [
+  {
+    archetype: "Zaraleak Rogue",
+    matchups: [
+      { vsArchetype: "Dragon Druid", winrateAgainst: 0.612 },
+      { vsArchetype: "Pain Warlock", winrateAgainst: 0.587 },
+      { vsArchetype: "Board Flood Paladin", winrateAgainst: 0.543 },
+      { vsArchetype: "Spell Mage", winrateAgainst: 0.478 },
+      { vsArchetype: "ETC Warrior", winrateAgainst: 0.521 },
+    ],
+  },
+  {
+    archetype: "Dragon Druid",
+    matchups: [
+      { vsArchetype: "Zaraleak Rogue", winrateAgainst: 0.388 },
+      { vsArchetype: "Pain Warlock", winrateAgainst: 0.556 },
+      { vsArchetype: "Board Flood Paladin", winrateAgainst: 0.589 },
+      { vsArchetype: "Spell Mage", winrateAgainst: 0.612 },
+      { vsArchetype: "ETC Warrior", winrateAgainst: 0.534 },
+    ],
+  },
+  {
+    archetype: "Pain Warlock",
+    matchups: [
+      { vsArchetype: "Zaraleak Rogue", winrateAgainst: 0.413 },
+      { vsArchetype: "Dragon Druid", winrateAgainst: 0.444 },
+      { vsArchetype: "Board Flood Paladin", winrateAgainst: 0.567 },
+      { vsArchetype: "Spell Mage", winrateAgainst: 0.598 },
+      { vsArchetype: "ETC Warrior", winrateAgainst: 0.523 },
+    ],
+  },
+  {
+    archetype: "Board Flood Paladin",
+    matchups: [
+      { vsArchetype: "Zaraleak Rogue", winrateAgainst: 0.457 },
+      { vsArchetype: "Dragon Druid", winrateAgainst: 0.411 },
+      { vsArchetype: "Pain Warlock", winrateAgainst: 0.433 },
+      { vsArchetype: "Spell Mage", winrateAgainst: 0.589 },
+      { vsArchetype: "ETC Warrior", winrateAgainst: 0.612 },
+    ],
+  },
+  {
+    archetype: "Spell Mage",
+    matchups: [
+      { vsArchetype: "Zaraleak Rogue", winrateAgainst: 0.522 },
+      { vsArchetype: "Dragon Druid", winrateAgainst: 0.388 },
+      { vsArchetype: "Pain Warlock", winrateAgainst: 0.402 },
+      { vsArchetype: "Board Flood Paladin", winrateAgainst: 0.411 },
+      { vsArchetype: "ETC Warrior", winrateAgainst: 0.567 },
+    ],
+  },
+];
